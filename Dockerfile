@@ -1,7 +1,7 @@
 FROM tomcat:9.0.5-jre8
 ENV APP_CONFIG_PROPERTIES=/IMS/INPUT/NOPURGEORDELETE/Centralized_Configurations.properties
 ENV NE_DBCONFIG_PROPERTIES=/IMS/INPUT/NOPURGEORDELETE/dbconfig.properties
-RUN apt-get -y update && apt-get install -y procps && apt-get install -y vim
+RUN apt-get install -y procps && apt-get install -y vim
 COPY server.xml /usr/local/tomcat/conf/server.xml
 COPY context.xml  /usr/local/tomcat/conf/context.xml
 COPY setenv.sh  /usr/local/tomcat/bin/setenv.sh
